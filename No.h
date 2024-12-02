@@ -8,12 +8,15 @@ class No {
         No();
         ~No();
         int getInfo();
+        No* getAnt();
         No* getProx();
         void setInfo(int val);
         void setProx(No *p);
+        void setAnt(No *p);
     private:
         int info;
         No *prox;
+        No *ant;
 };
 
 #endif

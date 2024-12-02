@@ -9,9 +9,14 @@ class DuplamenteEncadeada{
         DuplamenteEncadeada();
         ~DuplamenteEncadeada();
         void insereInicio(int val);
+        void removeInicio(int val);
+        void insereUltimo(int val);
+        void removeUltimo(int val);
         bool busca(int val);
     private:
         No* primeiro;
+        int n;
+        No* ultimo;
 };
 
 #endif
