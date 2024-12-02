@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
 
-#include "SimplesEncadeada.h"
+#include "DuplamenteEncadeada.h"
 #include "No.h"
 
-SimplesEncadeada::SimplesEncadeada()
+DuplamenteEncadeada::DuplamenteEncadeada()
 {
     primeiro= nullptr;
 }
 
-SimplesEncadeada::~SimplesEncadeada()
+DuplamenteEncadeada::~DuplamenteEncadeada()
 {
     No *p = primeiro;
     while (p!= nullptr)
@@ -20,7 +20,7 @@ SimplesEncadeada::~SimplesEncadeada()
     }
 }
 
-void SimplesEncadeada::insereInicio(int val)
+void DuplamenteEncadeada::insereInicio(int val)
 {
     No *p = new No;
     p->setInfo(val);
@@ -28,7 +28,7 @@ void SimplesEncadeada::insereInicio(int val)
     primeiro = p;
 }
 
-bool SimplesEncadeada::busca (int val)
+bool DuplamenteEncadeada::busca (int val)
 {
     No* busca = primeiro;
     while (busca!=nullptr)
