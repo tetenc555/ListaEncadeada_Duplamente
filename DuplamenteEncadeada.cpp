@@ -36,7 +36,7 @@ void DuplamenteEncadeada::insereInicio(int val)
 
 void DuplamenteEncadeada::removeInicio()
 {
-    if (n>0)
+    if (primeiro!=nullptr)
     {
         No *p = primeiro;
         primeiro = p->getProx();
@@ -47,6 +47,37 @@ void DuplamenteEncadeada::removeInicio()
         else
             primeiro -> setAnt(nullptr);
     }
+}
+
+void DuplamenteEncadeada::insereUltimo(int val)
+{
+    if (n >0)
+    {
+        No* p = new No;
+        p->setInfo(val);
+        ultimo->setProx(p);
+        p->setAnt(ultimo);
+        ultimo = p;
+        n++;
+    }
+    else
+        this->insereInicio(val);
+}
+
+void DuplamenteEncadeada::removeUltimo()
+{
+    if(ultimo==nullptr)
+    {
+        return;
+    }
+    No *p = ultimo;
+    ultimo = p->getAnt();
+    delete p;
+    n--;
+    if(n==0)
+        primeiro = nullptr;
+    else
+        ultimo -> setProx(nullptr);
 }
 
 bool DuplamenteEncadeada::busca (int val)
